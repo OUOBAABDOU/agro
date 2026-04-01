@@ -696,6 +696,25 @@ body {
   margin-bottom: 20px;
 }
 
+.card-image {
+  margin: 20px -32px;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: var(--transition-slow);
+}
+
+.card:hover .card-image img {
+  transform: scale(1.1);
+}
+
 .card-list {
   list-style: none;
   margin-bottom: 24px;
@@ -770,8 +789,8 @@ body {
 /* Gallery Premium */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .gallery-item {
@@ -782,12 +801,6 @@ body {
   transition: var(--transition);
   position: relative;
 }
-
-.gallery-item:nth-child(1) { grid-column: span 7; }
-.gallery-item:nth-child(2) { grid-column: span 5; }
-.gallery-item:nth-child(3) { grid-column: span 4; }
-.gallery-item:nth-child(4) { grid-column: span 4; }
-.gallery-item:nth-child(5) { grid-column: span 4; }
 
 .gallery-item:hover {
   transform: translateY(-8px);
@@ -807,9 +820,28 @@ body {
 .gallery-img--focus-3 { object-position: left center; }
 .gallery-img--focus-4 { object-position: right center; }
 .gallery-img--focus-5 { object-position: center 45%; }
+.gallery-img--focus-6 { object-position: center 50%; }
 
 .gallery-item:hover img {
   transform: scale(1.08);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 20px;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.7) 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  transform: translateY(100%);
+  transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-caption {
+  transform: translateY(0);
 }
 
 /* Quick Info Cards */

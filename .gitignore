@@ -1,3 +1,7 @@
-﻿*.jpg
-*.jpeg
-*.png
+﻿# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Dossiers
+node_modules/
+agro/
