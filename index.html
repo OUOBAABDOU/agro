@@ -263,10 +263,28 @@
             Matériels agricoles, semences, pompes, intrants et appui-conseils.
             Écrivez-nous avec le produit recherché, la quantité et votre localité.
           </p>
-          <div class="contact-actions">
-            <a class="btn btn-primary" href="https://wa.me/22657155536" target="_blank" rel="noreferrer">Écrire sur WhatsApp</a>
-            <a class="btn btn-outline light" href="tel:+22657155536">Appeler maintenant</a>
-          </div>
+          <form class="contact-form" id="contact-form">
+            <label class="form-field">
+              <span>Nom / structure</span>
+              <input type="text" id="client-name" name="client-name" placeholder="Ex. Ferme Kaboré" />
+            </label>
+            <label class="form-field">
+              <span>Votre besoin</span>
+              <textarea id="whatsapp-message" name="whatsapp-message" rows="7">Bonjour YAM VEENEM SERVICES SARL,
+
+Je souhaite demander un devis.
+Produit recherche :
+Quantite :
+Localite :
+Delai souhaite :
+
+Merci de me recontacter.</textarea>
+            </label>
+            <div class="contact-actions">
+              <a class="btn btn-primary" id="whatsapp-prefill" href="https://wa.me/22657155536" target="_blank" rel="noreferrer">Envoyer sur WhatsApp</a>
+              <a class="btn btn-outline light" href="tel:+22657155536">Appeler maintenant</a>
+            </div>
+          </form>
         </div>
 
         <div class="contact-card">

@@ -2,6 +2,9 @@
   const nav = document.getElementById('nav');
   const toggle = document.querySelector('.nav-toggle');
   const year = document.getElementById('year');
+  const nameInput = document.getElementById('client-name');
+  const messageInput = document.getElementById('whatsapp-message');
+  const whatsappLink = document.getElementById('whatsapp-prefill');
 
   if (year) year.textContent = String(new Date().getFullYear());
 
@@ -35,5 +38,25 @@
       const clickOnToggle = toggle.contains(target);
       if (!clickInNav && !clickOnToggle) setOpen(false);
     });
+  }
+
+  if (messageInput && whatsappLink) {
+    const baseUrl = 'https://wa.me/22657155536';
+
+    function buildMessage() {
+      const name = nameInput ? nameInput.value.trim() : '';
+      const message = messageInput.value.trim();
+      if (!name) return message;
+      return message + '\n\nNom / structure : ' + name;
+    }
+
+    function syncWhatsAppLink() {
+      const text = buildMessage();
+      whatsappLink.href = text ? baseUrl + '?text=' + encodeURIComponent(text) : baseUrl;
+    }
+
+    syncWhatsAppLink();
+    messageInput.addEventListener('input', syncWhatsAppLink);
+    if (nameInput) nameInput.addEventListener('input', syncWhatsAppLink);
   }
 })();
